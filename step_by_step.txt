@@ -1,0 +1,7 @@
+[~]$ git clone https://github.com/[username]/express_prj.git
+[~]$ npm install -g express-generator
+[~]$ ls
+>> express_prj
+[~]$ express --view=ejs express_prj
+>> destination is not empty, continue? [y/N] y
+
