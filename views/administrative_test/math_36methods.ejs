@@ -39,13 +39,17 @@
                     <%-subject.options%>
                   </div>
                   <br>
-                  <div class="text-light bg-secondary">
+                  <div class="text-light bg-secondary p-3">
                     <%-subject.answer%>
                   </div>
                 </div>
                 <br>
               <%})%>
             </div>
+            <button class="btn btn-secondary m-5" type="button" data-bs-toggle="collapse"
+              data-bs-target="#collapse<%=item.title%>" aria-expanded="true" aria-controls="collapse<%=item.title%>">
+              <h6>收起</h6>
+            </button>
           </div>
         </div>
         <%})%>
