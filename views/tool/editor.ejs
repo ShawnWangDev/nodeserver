@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <%- include('../partials/top_navi.ejs') -%>
+  <div class="container">
+    <div id="wangeditor" style="width:70%"></div>
+  <button onclick="get()">get</button>
+  <div style="width: 70%;">
+    <textarea style="width: 100%;" rows="20" id="output"></textarea>
+  </div>
+  <script type="text/javascript" src="/javascripts/wangEditor.min.js"></script>
+  <script type="text/javascript">
+    const E = window.wangEditor
+    const editor = new E("#wangeditor")
+    editor.create()
+
+    function get() {
+      let editorTextHtml= editor.txt.html().replace(/\s{2,}/g, ' ').replace(/[\t\r\n]/g,'').replace(/\"/g,'\'')
+      if(editorTextHtml==''){
+        alert("请输入文字")
+      }else{
+      var outputTextArea=document.getElementById("output")
+      outputTextArea.value=editorTextHtml
+      }
+    }
+  </script>
+  </div>
+  
+</body>
+
+</html>

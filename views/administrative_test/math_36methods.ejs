@@ -13,47 +13,48 @@
 <body>
   <%- include('../partials/top_navi.ejs') -%>
     <div class="container">
-      <h1>数量关系36计</h1>
-      
-
-
-      <div class="accordion" id="accordionExample" style="width:90%;">
-        <% data.forEach(function(item){%>
-        <div class="accordion-item">
-          <h2 class="accordion-header" id="heading<%=item.title%>">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-              data-bs-target="#collapse<%=item.title%>" aria-expanded="true" aria-controls="collapse<%=item.title%>">
-              <h5><%=item.title%></h5>
-            </button>
-          </h2>
-          <div id="collapse<%=item.title%>" class="accordion-collapse collapse" aria-labelledby="heading<%=item.title%>"
-            data-bs-parent="#accordionExample">
-            <div class="accordion-body">
-              <% item.content.forEach(function(subject){ %>
-                <div class="shadow p-3 rounded">
-                  <div>
-                    <%-subject.problem%>
+      <div class="d-flex justify-content-center m-3">
+        <div class="accordion" id="accordionExample" style="width:90%;">
+          <% data.forEach(function(item){%>
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="heading<%=item.title%>">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                data-bs-target="#collapse<%=item.title%>" aria-expanded="true" aria-controls="collapse<%=item.title%>">
+                <h5><%=item.title%></h5>
+              </button>
+            </h2>
+            <div id="collapse<%=item.title%>" class="accordion-collapse collapse" aria-labelledby="heading<%=item.title%>"
+              data-bs-parent="#accordionExample">
+              <div class="accordion-body">
+                <% item.content.forEach(function(subject){ %>
+                  <div class="shadow p-3 rounded">
+                    <div>
+                      <%-subject.problem%>
+                    </div>
+                    <br>
+                    <div>
+                      <%-subject.options%>
+                    </div>
+                    <br>
+                    <div class="text-light bg-secondary p-3">
+                      <%-subject.answer%>
+                    </div>
                   </div>
                   <br>
-                  <div>
-                    <%-subject.options%>
-                  </div>
-                  <br>
-                  <div class="text-light bg-secondary p-3">
-                    <%-subject.answer%>
-                  </div>
-                </div>
-                <br>
-              <%})%>
+                <%})%>
+              </div>
+              <button class="btn btn-secondary m-5" type="button" data-bs-toggle="collapse"
+                data-bs-target="#collapse<%=item.title%>" aria-expanded="true" aria-controls="collapse<%=item.title%>">
+                <h6>收起</h6>
+              </button>
             </div>
-            <button class="btn btn-secondary m-5" type="button" data-bs-toggle="collapse"
-              data-bs-target="#collapse<%=item.title%>" aria-expanded="true" aria-controls="collapse<%=item.title%>">
-              <h6>收起</h6>
-            </button>
           </div>
+          <%})%>
         </div>
-        <%})%>
       </div>
+
+
+      
     </div>
 </body>
 

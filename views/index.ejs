@@ -5,30 +5,36 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title><%= title %></title>
-    <!-- <link rel='stylesheet' href='/stylesheets/style.css' /> -->
-    <link rel='stylesheet' href='/stylesheets/bootstrap.min.css' />
-    <script src="/javascripts/bootstrap.bundle.min.js"></script>
   </head>
   <body>
-    <nav class="navbar navbar-expand-md bg-dark navbar-dark">
-      <div class="container">
-      <a href="#" class="navbar-brand"><%= title %></a>
-      <button
-        class="navbar-toggler"
-        type="button"
-        data-bs-toggle="collapse"
-        data-bs-target="#navmenu"
-      >
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navmenu">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><div class="nav-link"><a href="/administrative_test/home">行测</a></div></li>
-          <li class="nav-item"><div class="nav-link">申论</div></li>
-        </ul>
+    <%- include('./partials/top_navi.ejs') -%>
+    <div class="container">
+      <div class="row m-3">
+        <div class="card m-2" style="width: 12rem;">
+          <img src="/img/index/police.jpg" class="card-img-top">
+          <div class="card-body">
+            <h5 class="card-title">警察相关条文</h5>
+            <p class="card-text">法律法规、管理办法</p>
+            <a href="/law/police" class="btn btn-primary">Go</a>
+          </div>
+        </div>
+        <div class="card m-2" style="width: 12rem;">
+          <img src="/img/index/math_36methods.jpg" class="card-img-top">
+          <div class="card-body">
+            <h5 class="card-title">数量关系36计</h5>
+            <p class="card-text">数量资料秒杀36计·刘有珍</p>
+            <a href="/administrative_test/math_36methods" class="btn btn-primary">Go</a>
+          </div>
+        </div>
+        <div class="card m-2" style="width: 12rem;">
+          <img src="/img/index/editor.jpg" class="card-img-top">
+          <div class="card-body">
+            <h5 class="card-title">Wang Editor</h5>
+            <p class="card-text">轻量、简洁、易用的富文本编辑器</p>
+            <a href="/tool/editor" class="btn btn-primary">Go</a>
+          </div>
+        </div>
       </div>
     </div>
-    </nav>
-    <div class="container"></div>
   </body>
 </html>
