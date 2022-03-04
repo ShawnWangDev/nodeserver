@@ -23,8 +23,6 @@ router.get('/police', function (req, res, next) {
         let id_and_title = { "id": law.id, "title": law.title }
         id_and_title_arr.push(id_and_title)
     }
-    console.log(id_and_title_arr)
-
     res.render('law/police', { title: '警察条文', data: id_and_title_arr });
 })
 
