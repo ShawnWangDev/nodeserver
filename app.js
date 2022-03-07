@@ -10,7 +10,11 @@ var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var administrativeTestRouter = require('./routes/administrative_test');
 var lawRouter = require('./routes/law');
+var shenlunRouter = require('./routes/shenlun');
 var toolRouter = require('./routes/tool');
+
+// var query=require('./db/query')
+
 var app = express();
 
 // view engine setup
@@ -23,10 +27,13 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+// app.use(query)
+
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/administrative_test', administrativeTestRouter)
 app.use('/law', lawRouter)
+app.use('/shenlun',shenlunRouter)
 app.use('/tool',toolRouter)
 
 

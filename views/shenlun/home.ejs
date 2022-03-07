@@ -13,16 +13,14 @@
 <body>
   <%- include('../partials/top_navi.ejs') -%>
     <div class="container">
-      <br>
-      <div style="margin:0 auto;width: 60%;">
-        <ul class="list-group">
-          <% laws.forEach(function(item){%>
-            <li class="list-group-item"><a href="/law/police/<%=item.id%>"><%=item.title%></a></li>
-            <%})%>
-        </ul>
+      <div class="d-flex justify-content-center m-3">
+        <div style="margin:0 auto;width: 60%;">
+          <ul class="list-group">
+            <% data.forEach(function(item){%>
+              <li class="list-group-item"><a href="/shenlun/show/<%=item.id%>"><%=item.title%></a></li>
+              <%})%>
+          </ul>
+        </div>
       </div>
-        
-    </div>
 </body>
-
 </html>

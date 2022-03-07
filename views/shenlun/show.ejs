@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>
+    <%= title %>
+  </title>
+</head>
+
+<body>
+  <%- include('../partials/top_navi.ejs') -%>
+    <div class="container">
+      <div class="m-3">
+        <button class="btn btn-secondary m-3" type="button" onclick="window.history.back()">
+          <h6>返回</h6>
+        </button>
+        <%- material -%>
+          <button class="btn btn-secondary m-3" type="button" onclick="window.history.back()">
+            <h6>返回</h6>
+          </button>
+      </div>
+
+      <div class="m-3">
+        <h3>作答</h3>
+        <% QA.forEach(function(item){ %>
+          <%-item.question-%>
+            <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#QA<%-item.no-%>"
+              aria-expanded="false" aria-controls="QA<%-item.no-%>">
+              答案
+            </button>
+            <div class="collapse" id="QA<%-item.no-%>">
+              <div class="card card-body">
+                <%-item.answer-%>
+              </div>
+            </div>
+            <%})%>
+      </div>
+    </div>
+</body>
+
+</html>

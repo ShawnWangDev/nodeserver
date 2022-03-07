@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>2 1 line</title>
+</head>
+
+<body>
+  <div class="container">
+    <div style="width: 70%;">
+      <textarea style="width: 100%;" rows="16" id="input"></textarea>
+    </div>
+  <button onclick="get()">get</button>
+  <div style="width: 70%;">
+    <textarea style="width: 100%;" rows="16" id="output"></textarea>
+  </div>
+  <script type="text/javascript">
+    function get() {
+      let input_text= document.getElementById("input").value.replace(/\s{2,}/g, ' ').replace(/[\t\r\n]/g,'')
+      if(input_text==''){
+        alert("请输入文字")
+      }else{
+      document.getElementById("output").value=input_text
+      }
+    }
+  </script>
+  </div>
+  
+</body>
+
+</html>
